@@ -1,29 +1,35 @@
-### 1. Crear un Sample (Kick)
+### 1. Guardar primer sample (Kick 808)
 POST http://localhost:8080/api/samples
 Content-Type: application/json
 
 {
-  "nombre": "Kick 808 Distorted",
+  "nombre": "Kick 808",
   "tipo": "One-Shot",
   "bpm": 0,
   "tonalidad": "C",
-  "urlDemo": "https://example.com/kick.mp3"
+  "urlDemo": "https://mis-samples.com/kick.mp3"
 }
 
-### 2. Crear otro Sample (Loop de Batería)
+### 2. Guardar segundo sample (Loop de Batería)
 POST http://localhost:8080/api/samples
 Content-Type: application/json
 
 {
-  "nombre": "Amen Break",
+  "nombre": "Amen Break Clásico",
   "tipo": "Loop",
-  "bpm": 170,
+  "bpm": 174,
   "tonalidad": "-",
-  "urlDemo": "https://example.com/amen.wav"
+  "urlDemo": "https://mis-samples.com/amen.wav"
 }
 
-### 3. Consultar todos los samples (Deberían salir los 2 de arriba)
+### 3. Obtener TODOS los samples (Deberían salir los 2)
 GET http://localhost:8080/api/samples
 
-### 4. Consultar solo el ID 1
+### 4. Obtener solo el sample con ID 1
 GET http://localhost:8080/api/samples/1
+
+### 5. Eliminar el sample con ID 1
+DELETE http://localhost:8080/api/samples/1
+
+### 6. Verificar que se borró (Vuelve a pedir todos, solo debería quedar el ID 2)
+GET http://localhost:8080/api/samples

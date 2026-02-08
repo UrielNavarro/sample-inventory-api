@@ -1,15 +1,14 @@
-package com.urielnav.sample_inventory;
+package com.urielnav.sample_inventory.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-@Entity // Entidad en base de datos
-public class Sample {
+@Entity
+@Table(name = "sample")
+public class SampleModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // ID autoincremental
+    @Column(unique = true, nullable = false)
     private Long id;
 
     private String nombre;
@@ -19,11 +18,11 @@ public class Sample {
     private String urlDemo;
 
     // Constructor vacío (obligatorio para JPA)
-    public Sample() {
+    public SampleModel() {
     }
 
     // Constructor con datos
-    public Sample(String nombre, String tipo, int bpm, String tonalidad, String urlDemo) {
+    public SampleModel(String nombre, String tipo, int bpm, String tonalidad, String urlDemo) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.bpm = bpm;
@@ -49,4 +48,5 @@ public class Sample {
 
     public String getUrlDemo() { return urlDemo; }
     public void setUrlDemo(String urlDemo) { this.urlDemo = urlDemo; }
+
 }
