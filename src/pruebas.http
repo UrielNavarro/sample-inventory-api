@@ -1,0 +1,29 @@
+### 1. Crear un Sample (Kick)
+POST http://localhost:8080/api/samples
+Content-Type: application/json
+
+{
+  "nombre": "Kick 808 Distorted",
+  "tipo": "One-Shot",
+  "bpm": 0,
+  "tonalidad": "C",
+  "urlDemo": "https://example.com/kick.mp3"
+}
+
+### 2. Crear otro Sample (Loop de Batería)
+POST http://localhost:8080/api/samples
+Content-Type: application/json
+
+{
+  "nombre": "Amen Break",
+  "tipo": "Loop",
+  "bpm": 170,
+  "tonalidad": "-",
+  "urlDemo": "https://example.com/amen.wav"
+}
+
+### 3. Consultar todos los samples (Deberían salir los 2 de arriba)
+GET http://localhost:8080/api/samples
+
+### 4. Consultar solo el ID 1
+GET http://localhost:8080/api/samples/1
