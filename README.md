@@ -40,7 +40,7 @@ El sistema sigue el patrón de diseño **Controller-Service-Repository**:
     ```bash
     git clone [https://github.com/tu-usuario/sample-inventory-api.git](https://github.com/tu-usuario/sample-inventory-api.git)
     ```
-2.  **Abrir en tu IDE de preferencia
+2.  **Abrir en tu IDE de preferencia.** 
 3.  **Ejecutar la clase principal:** `SampleInventoryApplication.java`.
 4.  **Probar la API:**
     * Puedes usar el archivo `pruebas.http` incluido en el proyecto.
